@@ -9,9 +9,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { registerLocaleData } from '@angular/common';
-import { localePt } from '@angular/common/locales/pt';
+import localePt from '@angular/common/locales/pt';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 
+registerLocaleData(localePt);
 
 
 @NgModule({
@@ -25,9 +27,10 @@ import { localePt } from '@angular/common/locales/pt';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CurrencyMaskModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: "pt-BR"}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

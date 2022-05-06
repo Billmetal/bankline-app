@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { MovimentacaoService } from 'src/app/services/movimentacao.service';
 
@@ -9,6 +10,7 @@ import { MovimentacaoService } from 'src/app/services/movimentacao.service';
 export class MovimentacaoListComponent implements OnInit {
 
   movimentacoes: any;
+  
 
   constructor(private movimentacaoService: MovimentacaoService) { }
 
@@ -22,7 +24,8 @@ export class MovimentacaoListComponent implements OnInit {
         this.movimentacoes = data;
         console.log(data);
       },
-      error => {console.log(error)});
+      error => {console.log(error)}
+    );
   };
 
 }
